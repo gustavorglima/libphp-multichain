@@ -536,6 +536,25 @@ class MultichainClient
     }
 
     /**
+     * This works like issueMore, but with control over the from-address used.
+     *
+     * @param $fromAddress
+     * @param $toAddress
+     * @param $asset
+     * @param $qty
+     * @param int $nativeAmount
+     * @param null $custom
+     * @return mixed
+     */
+    public function issueMoreFrom($fromAddress, $toAddress, $asset, $qty, $nativeAmount=0, $custom = null){
+        $params = array($fromAddress, $toAddress, $asset, $qty, $nativeAmount);
+        if (!is_null($custom)) {
+            $params[] = $custom;
+        }
+        return $this->jsonRPCClient->execute("issuemorefrom", $params);
+    }
+
+    /**
      * This works like issue, but with control over the from-address used to issue the asset. If there are multiple
      * addresses with asset issuing permissions on one node, this allows control over which address is used.
      *
