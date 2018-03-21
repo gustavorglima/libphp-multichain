@@ -22,7 +22,7 @@ See more examples and documentation in the tests folder.
 
 The recommended way to install this library through Composer. Run the Composer command to install the latest stable version:
 
-    composer require kunstmaan/libphp-multichain
+    composer require gustavorglima/libphp-multichain
 
 ## Need a development Blockchain and like Docker?
 
